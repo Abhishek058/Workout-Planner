@@ -20,7 +20,7 @@ export default function App() {
       firebase.auth().onAuthStateChanged((user) => {
         setLoading(false);
       });
-    }, 2900);
+    }, 2500);
   }, []);
 
   return (

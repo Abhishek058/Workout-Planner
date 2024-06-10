@@ -1,4 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
   margin: 0;
   padding: 0;
+}
+
+.loginPage{
+  background-image: url('https://www.healthifyme.com/blog/wp-content/uploads/2023/11/shutterstock_1655291458-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

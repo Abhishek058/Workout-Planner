@@ -1,14 +1,12 @@
 import React from "react";
-import firebase from "firebase/compat/app";
+import Navbar from "../HomeComp/Navbar";
+import Hero from "../HomeComp/Hero";
 
 export default function Home() {
-  //logout function
-  const logout = async () => {
-    await firebase.auth().signOut();
-  };
-  return <div>
-    <button onClick={logout}>
-      LogOut
-    </button>
-  </div>;
+  return (
+    <div className="bg-black h-screen">
+      <Navbar />
+      <Hero />
+    </div>
+  );
 }

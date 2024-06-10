@@ -11,8 +11,10 @@ export default function Login() {
       await firebase.auth().signInWithPopup(provider);
     } catch (error) {
       if (error.code === "auth/popup-closed-by-user") {
+        console.log(error);
         alert("Sign-in process was canceled. Please try again.");
       } else {
+        console.log(error);
         alert("An error occurred during sign-in. Please try again later.");
       }
     }

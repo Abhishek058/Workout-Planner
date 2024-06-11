@@ -48,7 +48,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`h-full fixed top-0 z-1 w-[300px] bg-white pt-20 -translate-x-${sideNav} transition duration-300 ease-in-out md:hidden`}
+        className={`h-full fixed top-0 z-10 w-[300px] bg-white pt-20 -translate-x-${sideNav} transition duration-300 ease-in-out md:hidden`}
       >
         <div className="flex flex-col items-center justify-center">
           <img

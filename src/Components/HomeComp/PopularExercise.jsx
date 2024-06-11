@@ -6,7 +6,7 @@ import g4Img from "../../assets/Group12.png";
 import g5Img from "../../assets/Group13.png";
 import g6Img from "../../assets/Group14.png";
 
-export default function Popular_exercise() {
+export default function PopularExercise() {
   const exercise = [
     {
       imgUrl: g1Img,
@@ -35,7 +35,7 @@ export default function Popular_exercise() {
   ];
 
   return (
-    <div className="bg-black p-8 flex flex-col items-center">
+    <div className="bg-black p-8 py-20 flex flex-col items-center">
       <h1 className="text-4xl max-w-7xl ml-5 w-full text-white text-left font-semibold mb-16">Popular Exercise</h1>
       <div className="grid gap-12 max-w-7xl w-full 
                       grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

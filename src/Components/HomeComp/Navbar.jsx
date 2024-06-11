@@ -23,7 +23,7 @@ export default function Navbar() {
           <img
             src={user.photoURL}
             alt="userImage"
-            referrerpolicy="no-referrer"
+            referrerPolicy="no-referrer"
             className="w-10 rounded-full"
           />
           <h1 className="text-white mx-4 font-semibold text-xl">

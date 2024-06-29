@@ -37,7 +37,7 @@ const WorkoutTimeline = () => {
   return (
     <div className="flex flex-col items-center bg-black p-8">
       <h1 className="text-4xl font-semibold my-10 text-white">Workout Plan</h1>
-      <div className="w-full max-w-xl">
+      <div className="w-full max-w-4xl">
         {workouts.map((workout, index) => (
           <div
             key={index}
@@ -45,7 +45,7 @@ const WorkoutTimeline = () => {
               index % 2 === 0 ? "justify-start" : "justify-end"
             } w-full`}
           >
-            <div className="bg-white bg-opacity-25 rounded-lg p-4 w-80 m-2">
+            <div className="bg-white bg-opacity-25 rounded-lg p-4 w-80 m-2 shadow-white shadow-md">
               <h2 className="text-2xl text-white font-bold">{workout.day}</h2>
               <h3 className="text-lg text-green-600 font-semibold mb-2">
                 {workout.activity}

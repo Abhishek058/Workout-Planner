@@ -1,18 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
-  const [showModal, setShowModal] = useState("full");
+  const [showModal, setShowModal] = useState("top-full");
+  const [caloriCount, setCaloriCount] = useState(0);
+  const [Stime, setSTime] = useState(0);
+  const [Mtime, setMTime] = useState(0);
 
   const handleModal = () => {
-    if (showModal === "full") setShowModal("0");
-    else setShowModal("full");
+    if (showModal === "top-full") setShowModal("top-0");
+    else setShowModal("top-full");
   };
+
+  useEffect(() => {
+    if (caloriCount < 168) {
+      const intervalId = setInterval(() => {
+        setCaloriCount((prevCount) => prevCount + 1);
+      }, 5);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [caloriCount]);
+
+  useEffect(() => {
+    if (Stime < 14) {
+      const intervalId = setInterval(() => {
+        setSTime((prevCount) => prevCount + 1);
+      }, 45);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [Stime]);
+
+  useEffect(() => {
+    if (Mtime < 38) {
+      const intervalId = setInterval(() => {
+        setMTime((prevCount) => prevCount + 1);
+      }, 35);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [Mtime]);
 
   return (
     <div>
       <div
-        className={`w-full h-full fixed top-${showModal} bg-black bg-opacity-90 z-1 flex flex-col items-center justify-center duration-200 ease-in-out transition-all`}
+        className={`w-full h-full fixed ${showModal} bg-black bg-opacity-90 z-1 flex flex-col items-center justify-center duration-200 ease-in-out transition-all`}
       >
         <div className="w-[300px] py-8 bg-white flex flex-col items-center justify-center rounded-xl">
           <h1 className="text-2xl text-center font-bold">
@@ -30,7 +63,9 @@ export default function Hero() {
               YES
             </Link>
             <button
-              onClick={handleModal}
+              onClick={() => {
+                setShowModal("top-full");
+              }}
               className="bg-red-600 px-6 py-2 rounded-full text-white text-xl font-bold m-5"
             >
               NO
@@ -75,11 +110,15 @@ export default function Hero() {
           </div>
           <div className="flex md:flex-col md:w-[30%] items-center md:justify-center gap-y-10 gap-x-4">
             <div className="bg-white bg-opacity-25 w-1/2 pl-3 py-2 flex flex-col justify-center rounded-xl">
-              <h1 className="text-yellow-400 text-4xl font-semibold">38:14</h1>
+              <h1 className="text-yellow-400 text-4xl font-semibold">
+                {Mtime}:{Stime}
+              </h1>
               <h1 className="text-gray-400 text-xs font-semibold my-2">TIME</h1>
             </div>
             <div className="bg-white bg-opacity-25 w-1/2 pl-3 py-2 flex flex-col justify-center rounded-xl">
-              <h1 className="text-red-600 text-4xl font-semibold">165</h1>
+              <h1 className="text-red-600 text-4xl font-semibold">
+                {caloriCount}+
+              </h1>
               <h1 className="text-gray-400 text-xs font-semibold my-2">
                 EST CALORIES
               </h1>

@@ -6,13 +6,13 @@ import { FaBars } from "react-icons/fa";
 
 export default function Navbar() {
   const [user] = useAuthState(firebase.auth());
-  const [sideNav, setSideNav] = useState("full");
+  const [sideNav, setSideNav] = useState("-translate-x-full");
 
   const handleSideNav = () => {
-    if (sideNav === "full") {
+    if (sideNav === "-translate-x-full") {
       setSideNav("0");
     } else {
-      setSideNav("full");
+      setSideNav("-translate-x-full");
     }
   };
   return (
@@ -50,7 +50,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`h-full fixed top-0 z-10 w-[300px] bg-white pt-20 -translate-x-${sideNav} transition duration-300 ease-in-out md:hidden`}
+        className={`h-full fixed left-0 md:hidden top-0 z-10 w-[300px] bg-white pt-20 ${sideNav} transition duration-300 ease-in-out`}
       >
         <div className="flex flex-col items-center justify-center">
           <img

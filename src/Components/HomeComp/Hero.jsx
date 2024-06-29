@@ -75,7 +75,7 @@ export default function Hero() {
       </div>
 
       <div className="hero">
-        <div className="h-full w-full bg-black bg-opacity-90 p-8 py-10 flex flex-col md:flex-row">
+        <div className="h-full w-full bg-black bg-opacity-85 p-8 py-10 flex flex-col md:flex-row">
           <div className="text-white flex flex-col md:w-[70%]">
             <div className="flex gap-x-3 w-max items-center bg-white bg-opacity-20 rounded-full p-2">
               <div className="bg-green-400 px-3 py-1 text-xs sm:text-sm rounded-full font-medium">

@@ -37,5 +37,12 @@
   background-image: url("https://img.freepik.com/free-photo/fit-fitness-woman-man-doing-fitness-exercises-outdoors-city_155003-9845.jpg?t=st=1718036984~exp=1718040584~hmac=55e3f5afb7e439460b2a2a508dc609ef4859c86e560841d6d6710a37d0298c94&w=1800");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
+.workoutLine {
+  background-image: url("https://hips.hearstapps.com/hmg-prod/images/outdoor-pull-ups-royalty-free-image-1681208481.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

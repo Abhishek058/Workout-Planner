@@ -18,7 +18,9 @@ export default function Navbar() {
   return (
     <>
       <div className="w-full h-20 flex items-center justify-between px-8">
-        <div className="text-xl text-white">Are you working out....</div>
+        <div className="flex items-center justify-center">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrqzNW16xPLPoYPLJWbuicgDGy64n83FKfFg&s" alt="logo"  className="mr-4 rounded-full" width={"40px"}/>
+          <p className="text-xl text-white ">Are you working out....</p></div>
         <div className="hidden md:flex items-center justify-center">
           <img
             src={user.photoURL}

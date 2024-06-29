@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <div>
       <div
-        className={`w-full h-full fixed top-${showModal} bg-black bg-opacity-90 z-1 flex flex-col items-center justify-center`}
+        className={`w-full h-full fixed top-${showModal} bg-black bg-opacity-90 z-1 flex flex-col items-center justify-center duration-200 ease-in-out transition-all`}
       >
         <div className="w-[300px] py-8 bg-white flex flex-col items-center justify-center rounded-xl">
           <h1 className="text-2xl text-center font-bold">

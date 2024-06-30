@@ -16,7 +16,7 @@ export default function Hero() {
     if (caloriCount < 168) {
       const intervalId = setInterval(() => {
         setCaloriCount((prevCount) => prevCount + 1);
-      }, 5);
+      }, 1);
 
       return () => clearInterval(intervalId);
     }
@@ -26,7 +26,7 @@ export default function Hero() {
     if (Stime < 14) {
       const intervalId = setInterval(() => {
         setSTime((prevCount) => prevCount + 1);
-      }, 45);
+      }, 30);
 
       return () => clearInterval(intervalId);
     }
@@ -36,7 +36,7 @@ export default function Hero() {
     if (Mtime < 38) {
       const intervalId = setInterval(() => {
         setMTime((prevCount) => prevCount + 1);
-      }, 35);
+      }, 15);
 
       return () => clearInterval(intervalId);
     }
@@ -89,7 +89,7 @@ export default function Hero() {
               Calisthenics <br /> Workout
             </div>
             <div className="text-gray-500 text-sm md:text-md xl:text-lg">
-              use your body weight for effective strength training. With little
+              Use your body weight for effective strength training. With little
               or no equipment, you can work out anywhere, building strength
               through natural, multi-joint movements.
             </div>

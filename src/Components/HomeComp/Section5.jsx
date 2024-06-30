@@ -3,7 +3,7 @@ import workoutimage2 from "../../assets/WorkoutImage2.png";
 
 export default function Section5() {
   return (
-    <div className="bg-black p-10 flex items-center justify-center w-full">
+    <div className="bg-black p-10 flex flex-col items-center justify-center w-full">
       <div className="flex flex-col items-center justify-center md:flex-row md:space-x-10">
         <div className="flex justify-center md:w-3/5">
           <img
@@ -40,11 +40,18 @@ export default function Section5() {
             <button className="bg-green-500 hover:bg-green-600 px-5 py-2 rounded-md text-white text-lg font-bold duration-200">
               Join Now
             </button>
-            <button className=" px-5 py-2 rounded-md text-white text-lg font-bold hover:bg-white hover:bg-opacity-35 duration-200">
+            <button className="px-5 py-2 rounded-md text-white text-lg font-bold hover:bg-white hover:bg-opacity-35 duration-200">
               Contact Us
             </button>
           </div>
         </div>
+      </div>
+      <div className="bg-white bg-opacity-15 flex gap-x-4 items-center justify-between rounded-md py-3 px-6 my-10">
+        <h1 className="text-gray-300 md:text-md">
+          Enhance user experience with healthy nutrition tips, support
+          resources, and social elements.
+        </h1>
+        <button className="bg-green-500 hover:bg-green-600 px-3 py-1 rounded-md text-white text-sm font-bold duration-200">Check Now</button>
       </div>
     </div>
   );

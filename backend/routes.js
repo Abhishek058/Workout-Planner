@@ -8,6 +8,10 @@ router.get("/", (req, res) => {
 
 router.post("/v1/startWorkout", async (req, res) => {
   try {
+    const workoutExist = await Workout.findOne({ email: req.body.email });
+    if (workoutExist) {
+      return res.status(400).json({ message: "Workout already started" });
+    }
     if (!req.body.email) {
       return res.status(400).json({ message: "Email is required" });
     }

@@ -1,15 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const [showModal, setShowModal] = useState("top-full");
   const [caloriCount, setCaloriCount] = useState(0);
   const [Stime, setSTime] = useState(0);
   const [Mtime, setMTime] = useState(0);
+  const [user] = useAuthState(firebase.auth());
+  const navigate = useNavigate();
 
   const handleModal = () => {
-    if (showModal === "top-full") setShowModal("top-0");
-    else setShowModal("top-full");
+    setShowModal(showModal === "top-full" ? "top-0" : "top-full");
+  };
+
+  const startWorkout = async () => {
+    try {
+      const res = await axios.post("http://localhost:5555/v1/startWorkout", {
+        email: user.email,
+        startDate: new Date(),
+        startDay: new Date().getDay(),
+        streak: 0,
+      });
+      navigate("/workout");
+      console.log(res.data);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   useEffect(() => {
@@ -45,7 +65,7 @@ export default function Hero() {
   return (
     <div>
       <div
-        className={`w-full h-full fixed ${showModal} bg-black bg-opacity-90 z-1 flex flex-col items-center justify-center duration-200 ease-in-out transition-all`}
+        className={`w-full h-full fixed ${showModal} bg-black bg-opacity-90 z-10 flex flex-col items-center justify-center duration-200 ease-in-out transition-all`}
       >
         <div className="w-[300px] py-8 bg-white flex flex-col items-center justify-center rounded-xl">
           <h1 className="text-2xl text-center font-bold">
@@ -56,16 +76,14 @@ export default function Hero() {
             alt=""
           />
           <div className="">
-            <Link
-              to={"/workout"}
+            <button
+              onClick={startWorkout}
               className="bg-green-600 px-6 py-2 rounded-full text-white text-xl font-bold m-5"
             >
               YES
-            </Link>
+            </button>
             <button
-              onClick={() => {
-                setShowModal("top-full");
-              }}
+              onClick={() => setShowModal("top-full")}
               className="bg-red-600 px-6 py-2 rounded-full text-white text-xl font-bold m-5"
             >
               NO
@@ -100,12 +118,14 @@ export default function Hero() {
               >
                 Get Started
               </button>
-              <button
-                to={"https://www.youtube.com/watch?v=bU7Ue4xF3YI"}
+              <a
+                href="https://www.youtube.com/watch?v=bU7Ue4xF3YI"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-1/2 md:w-1/4 py-4 text-md md:text-xl text-center font-semibold rounded-lg bg-white bg-opacity-25"
               >
                 Preview
-              </button>
+              </a>
             </div>
           </div>
           <div className="flex md:flex-col md:w-[30%] items-center md:justify-center gap-y-10 gap-x-4">

@@ -51,3 +51,5 @@ const weeklyWorkoutRoutine = [
     ],
   },
 ];
+
+export default weeklyWorkoutRoutine;

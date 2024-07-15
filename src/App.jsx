@@ -7,6 +7,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebaseConfig from "./firebase/config";
+import WorkOut from "./Components/Pages/WorkOut";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -46,6 +47,7 @@ export default function App() {
             </div>
           }
         />
+        <Route path="/workout" element={<WorkOut />} />
       </Routes>
     </BrowserRouter>
   );

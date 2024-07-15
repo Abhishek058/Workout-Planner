@@ -30,6 +30,25 @@ router.post("/v1/startWorkout", async (req, res) => {
   }
 });
 
+router.get('/v1/getWorkout', async (req, res) => {
+  try {
+    const email = req.query.email;
+    if (!email) {
+      return res.status(400).json({ message: 'Email is required' });
+    }
+
+    const workout = await Workout.findOne({ email: email });
+    if (!workout) {
+      return res.status(404).json({ message: 'Workout not found' });
+    }
+
+    res.json(workout);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: err.message });
+  }
+});
+
 router.put("/v1/updateStreak", async (req, res) => {
   try {
     if (!req.body.email) {

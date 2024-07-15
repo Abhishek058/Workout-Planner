@@ -19,14 +19,33 @@ export default function Hero() {
 
   const startWorkout = async () => {
     try {
-      const res = await axios.post("http://localhost:5555/v1/startWorkout", {
-        email: user.email,
-        startDate: new Date(),
-        startDay: new Date().getDay(),
-        streak: 0,
-      });
+      let workout;
+
+      try {
+        // Try to get existing workout
+        const response = await axios.get(
+          `http://localhost:5555/v1/getWorkout?email=${user.email}`
+        );
+        workout = response.data;
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          const res = await axios.post(
+            "http://localhost:5555/v1/startWorkout",
+            {
+              email: user.email,
+              startDate: new Date(),
+              startDay: new Date().getDay(),
+              streak: 0,
+            }
+          );
+          workout = res.data;
+        } else {
+          throw error;
+        }
+      }
+
+      console.log(workout);
       navigate("/workout");
-      console.log(res.data);
     } catch (err) {
       console.error(err);
     }

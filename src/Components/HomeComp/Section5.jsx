@@ -1,5 +1,6 @@
 import React from "react";
 import workoutimage2 from "../../assets/WorkoutImage2.png";
+import { FaCheck } from "react-icons/fa";
 
 export default function Section5() {
   return (
@@ -19,19 +20,19 @@ export default function Section5() {
           <div className="flex flex-col gap-y-3 mt-8">
             <div className="flex items-center md:justify-start">
               <div className="w-7 h-7 bg-green-600 mr-5 rounded-full text-center flex items-center justify-center">
-                ✔
+                <FaCheck />
               </div>
               <p className="text-lg">Increase Muscle and Strength</p>
             </div>
             <div className="flex items-center md:justify-start">
               <div className="w-7 h-7 bg-green-600 mr-5 rounded-full text-center flex items-center justify-center">
-                ✔
+                <FaCheck />
               </div>
               <p className="text-lg">Be Healthier than before</p>
             </div>
             <div className="flex items-center md:justify-start">
               <div className="w-7 h-7 bg-green-600 mr-5 rounded-full text-center flex items-center justify-center">
-                ✔
+                <FaCheck />
               </div>
               <p className="text-lg">Increase Stamina</p>
             </div>
@@ -51,7 +52,9 @@ export default function Section5() {
           Enhance user experience with healthy nutrition tips, support
           resources, and social elements.
         </h1>
-        <button className="bg-green-500 hover:bg-green-600 px-3 py-1 rounded-md text-white text-sm font-bold duration-200">Check Now</button>
+        <button className="bg-green-500 hover:bg-green-600 px-3 py-1 rounded-md text-white text-sm font-bold duration-200">
+          Check Now
+        </button>
       </div>
     </div>
   );
